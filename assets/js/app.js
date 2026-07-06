@@ -18,25 +18,54 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 
-  // --- Mobile Menu Toggle ---
-  const menuBtn = document.getElementById('menu-btn');
+  // --- Mobile Menu Toggle (slide-down drawer) ---
+  const menuBtn   = document.getElementById('menu-btn');
+  const menuIcon  = document.getElementById('menu-icon');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+  let menuOpen = false;
+
+  const openMenu = () => {
+    menuOpen = true;
+    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
+    mobileMenu.style.opacity  = '1';
+    menuIcon.classList.replace('fa-bars', 'fa-xmark');
+    menuBtn.setAttribute('aria-expanded', 'true');
+  };
+
+  const closeMenu = () => {
+    menuOpen = false;
+    mobileMenu.style.maxHeight = '0';
+    mobileMenu.style.opacity   = '0';
+    menuIcon.classList.replace('fa-xmark', 'fa-bars');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  };
+
   if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      mobileMenu.classList.toggle('flex');
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuOpen ? closeMenu() : openMenu();
     });
   }
 
-  // Close mobile menu on clicking any links
+  // Close on any nav link click
   const mobileLinks = mobileMenu ? mobileMenu.querySelectorAll('a') : [];
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      mobileMenu.classList.remove('flex');
-    });
+  mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (menuOpen && !mobileMenu.contains(e.target) && e.target !== menuBtn) {
+      closeMenu();
+    }
   });
+
+  // Close on scroll (after 60px)
+  let lastScrollY = window.scrollY;
+  window.addEventListener('scroll', () => {
+    if (menuOpen && Math.abs(window.scrollY - lastScrollY) > 60) {
+      closeMenu();
+    }
+    lastScrollY = window.scrollY;
+  }, { passive: true });
 
   // --- Scroll Progress Indicator & Header BG Toggle ---
   const scrollProgress = document.getElementById('scroll-progress');
@@ -162,24 +191,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // --- Contact Form Submission Handler ---
-  const contactForm = document.getElementById('contact-form');
-  const formStatus = document.getElementById('form-status');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      if (formStatus) {
-        formStatus.innerText = 'Sending message...';
-        formStatus.className = 'mt-4 text-xs text-zinc-400 font-medium';
+  // --- Copy Email to Clipboard ---
+  const copyEmailBtn = document.getElementById('copy-email-btn');
+  if (copyEmailBtn) {
+    copyEmailBtn.addEventListener('click', () => {
+      const emailText = 'bhusrinath@gmail.com';
+      navigator.clipboard.writeText(emailText).then(() => {
+        const icon = copyEmailBtn.querySelector('i');
+        if (icon) {
+          icon.className = 'fa-solid fa-check text-xs text-secondary';
+          setTimeout(() => {
+            icon.className = 'fa-regular fa-copy text-xs';
+          }, 2000);
+        }
         
+        // Show tooltip
+        const tooltip = document.createElement('span');
+        tooltip.innerText = 'Email Copied!';
+        tooltip.className = 'absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-800 text-white text-[10px] px-2 py-1 rounded shadow-md pointer-events-none transition-all opacity-0 scale-95 duration-200';
+        copyEmailBtn.style.position = 'relative';
+        copyEmailBtn.appendChild(tooltip);
+        
+        // Trigger animation
         setTimeout(() => {
-          formStatus.innerText = 'Thank you! Your message has been sent successfully. Srinath will get back to you soon.';
-          formStatus.className = 'mt-4 text-xs text-emerald-400 font-medium';
-          contactForm.reset();
-        }, 1500);
-      }
+          tooltip.className = tooltip.className.replace('opacity-0 scale-95', 'opacity-100 scale-100');
+        }, 50);
+
+        setTimeout(() => {
+          tooltip.className = tooltip.className.replace('opacity-100 scale-100', 'opacity-0 scale-95');
+          setTimeout(() => tooltip.remove(), 200);
+        }, 1800);
+      }).catch(err => {
+        console.error('Failed to copy text: ', err);
+      });
     });
   }
 });

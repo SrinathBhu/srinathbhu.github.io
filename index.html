@@ -31,7 +31,7 @@
   <meta name="twitter:image" content="https://srinathbhu.github.io/assets/img/favicon.png">
 
   <!-- Additional SEO -->
-  <meta name="theme-color" content="#6366F1">
+  <meta name="theme-color" content="#FF6F3C">
   <meta name="contact" content="bhusrinath@gmail.com">
   
   <!-- Tailwind CSS Play CDN -->
@@ -41,18 +41,19 @@
       theme: {
         extend: {
           colors: {
-            background: '#0B0D19',
-            foreground: '#F3F4F6',
-            card: '#121426',
-            cardBorder: 'rgba(99, 102, 241, 0.15)',
-            primary: '#6366F1',
-            secondary: '#A855F7',
-            accent: '#EC4899',
-            border: 'rgba(255, 255, 255, 0.08)',
+            background: '#011731',
+            foreground: '#F5F5F5',
+            card: '#1B2A49',
+            cardBorder: 'rgba(255, 111, 60, 0.15)',
+            primary: '#FF6F3C',
+            secondary: '#FFC857',
+            accent: '#D9D9D9',
+            charcoal: '#333333',
+            border: 'rgba(255, 255, 255, 0.10)',
           },
           fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Space Grotesk', 'sans-serif'],
+            sans: ['Montserrat', 'sans-serif'],
+            display: ['Montserrat', 'sans-serif'],
           }
         }
       }
@@ -65,70 +66,77 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-background text-foreground selection:bg-purple-500 selection:text-white antialiased">
+<body class="bg-background text-foreground selection:bg-primary selection:text-white antialiased">
 
   <!-- Scroll Progress -->
   <div id="scroll-progress"></div>
 
   <!-- Header / Navigation -->
-  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-12 bg-background/80 backdrop-blur-md border-b border-border">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-      <a href="/" class="font-display font-bold text-xl tracking-tight text-white flex items-center gap-2">
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 px-5 md:px-12 bg-background/80 backdrop-blur-md border-b border-border">
+    <div class="max-w-7xl mx-auto flex justify-between items-center h-12">
+
+      <!-- Logo -->
+      <a href="/" class="font-display font-bold text-xl tracking-tight text-white flex items-center gap-2.5 shrink-0">
         <img src="assets/img/favicon.png" alt="Srinath Bhu Logo" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/40">
         Srinath Bhu<span class="text-secondary">.</span>
       </a>
-      
+
       <!-- Desktop Navigation -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-        <a href="#summary" class="hover:text-white transition-colors">Summary</a>
-        <a href="#skills" class="hover:text-white transition-colors">Core Skills</a>
-        <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-        <a href="#linkedin" class="hover:text-white transition-colors">LinkedIn</a>
-        <a href="resume" class="bg-gradient-to-r from-primary to-secondary text-white hover:from-indigo-650 hover:to-purple-650 px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all shadow-lg hover:shadow-primary/20">View Resume</a>
+      <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-zinc-400">
+        <a href="#summary" class="hover:text-white transition-colors duration-200">Summary</a>
+        <a href="#skills" class="hover:text-white transition-colors duration-200">Skills</a>
+        <a href="#experience" class="hover:text-white transition-colors duration-200">Experience</a>
+        <a href="#projects" class="hover:text-white transition-colors duration-200">Projects</a>
+        <a href="#linkedin" class="hover:text-white transition-colors duration-200">LinkedIn</a>
+        <a href="resume" class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all shadow-lg hover:opacity-90 hover:shadow-primary/20 shrink-0">View Resume</a>
       </nav>
 
       <!-- Mobile Menu Button -->
-      <button id="menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Menu">
-        <i class="fa-solid fa-bars text-xl"></i>
+      <button id="menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-white hover:bg-white/10 transition-colors focus:outline-none focus:ring-2 focus:ring-primary/50" aria-label="Toggle Menu" aria-expanded="false">
+        <i id="menu-icon" class="fa-solid fa-bars text-lg transition-all duration-200"></i>
       </button>
     </div>
 
-    <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="hidden md:hidden fixed top-[61px] left-0 right-0 bottom-0 bg-background/95 flex-col items-center justify-center gap-8 text-lg font-semibold py-8 px-6 transition-all border-t border-border">
-      <a href="#summary" class="hover:text-white transition-colors">Summary</a>
-      <a href="#skills" class="hover:text-white transition-colors">Core Skills</a>
-      <a href="#experience" class="hover:text-white transition-colors">Experience</a>
-      <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-      <a href="#linkedin" class="hover:text-white transition-colors">LinkedIn</a>
-      <a href="resume" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg text-sm font-semibold transition-all">View Resume</a>
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu"
+         class="md:hidden overflow-hidden transition-all duration-300 ease-in-out"
+         style="max-height: 0; opacity: 0;">
+      <nav class="flex flex-col gap-1 pt-3 pb-4 px-2 border-t border-border mt-3">
+        <a href="#summary"   class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-300 hover:text-white hover:bg-white/8 text-base font-medium transition-all duration-200"><i class="fa-solid fa-file-lines w-5 text-primary text-sm"></i>Summary</a>
+        <a href="#skills"    class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-300 hover:text-white hover:bg-white/8 text-base font-medium transition-all duration-200"><i class="fa-solid fa-bolt w-5 text-secondary text-sm"></i>Core Skills</a>
+        <a href="#experience" class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-300 hover:text-white hover:bg-white/8 text-base font-medium transition-all duration-200"><i class="fa-solid fa-briefcase w-5 text-accent text-sm"></i>Experience</a>
+        <a href="#projects"  class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-300 hover:text-white hover:bg-white/8 text-base font-medium transition-all duration-200"><i class="fa-solid fa-rocket w-5 text-primary text-sm"></i>Projects</a>
+        <a href="#linkedin"  class="mobile-nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-300 hover:text-white hover:bg-white/8 text-base font-medium transition-all duration-200"><i class="fa-brands fa-linkedin w-5 text-secondary text-sm"></i>LinkedIn</a>
+        <a href="resume" class="mobile-nav-link mt-2 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-gradient-to-r from-primary to-secondary text-white text-sm font-semibold transition-all hover:opacity-90 shadow-lg"><i class="fa-solid fa-file-invoice text-xs"></i>View Printable Resume</a>
+      </nav>
     </div>
   </header>
 
+
   <!-- Hero Section -->
-  <section class="min-h-screen flex flex-col justify-center pt-28 pb-16 px-6 md:px-12 max-w-7xl mx-auto relative">
+  <section class="min-h-screen flex flex-col justify-center pt-24 sm:pt-28 pb-16 px-5 sm:px-6 md:px-12 max-w-7xl mx-auto relative">
     <div class="absolute -top-40 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
     <div class="absolute -bottom-40 left-0 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
 
     <div id="hero-container" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-8 space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-primary/15 to-secondary/15 border border-primary/20 text-indigo-300 text-xs font-semibold tracking-wide uppercase">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-primary/20 to-secondary/15 border border-primary/30 text-orange-200 text-xs font-semibold tracking-wide uppercase">
           <i class="fa-solid fa-bolt text-[10px] text-secondary"></i> Digital Headquarters
         </div>
         
-        <h1 class="text-4xl sm:text-6xl xl:text-7xl font-bold font-display leading-[1.1] tracking-tight text-white">
+        <h1 class="text-[2.2rem] sm:text-5xl xl:text-7xl font-bold font-display leading-[1.1] tracking-tight text-white">
           Srinath Bhuvanapalli
         </h1>
         
-        <p class="text-lg md:text-2xl font-light text-zinc-300 max-w-3xl">
+        <p class="text-base sm:text-lg md:text-2xl font-light text-zinc-300 max-w-3xl">
           Content Strategist • Organic Growth Specialist • Digital Storyteller • Video Producer • Creator
         </p>
 
-        <p class="text-sm font-mono text-zinc-400">
-          <span class="hover:text-white cursor-pointer transition-colors"><i class="fa-solid fa-envelope mr-1 text-primary"></i> bhusrinath@gmail.com</span> • 
-          <span class="hover:text-white cursor-pointer transition-colors ml-2"><i class="fa-solid fa-phone mr-1 text-secondary"></i> +91-8217886267</span> • 
-          <span class="hover:text-white cursor-pointer transition-colors ml-2"><i class="fa-brands fa-linkedin mr-1 text-accent"></i> linkedin.com/in/srinathbhu</span>
-        </p>
+        <div class="flex flex-wrap gap-x-4 gap-y-2 text-xs sm:text-sm font-mono text-zinc-400">
+          <span class="hover:text-white cursor-pointer transition-colors flex items-center gap-1"><i class="fa-solid fa-envelope text-primary"></i> bhusrinath@gmail.com</span>
+
+          <span class="hover:text-white cursor-pointer transition-colors flex items-center gap-1"><i class="fa-brands fa-linkedin text-accent"></i> linkedin.com/in/srinathbhu</span>
+        </div>
         
         <!-- CTAs -->
         <div class="flex flex-wrap gap-4 pt-4">
@@ -189,9 +197,9 @@
 
   <!-- Core Skills -->
   <section id="skills" class="py-24 px-6 md:px-12 max-w-7xl mx-auto" data-animate>
-    <div class="space-y-4 mb-16 text-center">
+    <div class="space-y-4 mb-16">
       <h2 class="text-3xl md:text-5xl font-bold font-display text-white">Core Skills</h2>
-      <p class="text-zinc-400 max-w-xl mx-auto">Categorized capabilities designed to scale audience reach, build community, and manage creative operations.</p>
+      <p class="text-zinc-400 max-w-xl">Categorized capabilities designed to scale audience reach, build community, and manage creative operations.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -247,7 +255,7 @@
       <!-- Skills Card 4 -->
       <div class="vibrant-card rounded-2xl p-6 flex flex-col justify-between">
         <div class="space-y-4">
-          <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-550/20 flex items-center justify-center text-indigo-400 text-lg">
+          <div class="w-10 h-10 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary text-lg">
             <i class="fa-solid fa-folder-open"></i>
           </div>
           <h3 class="text-lg font-bold font-display text-white">Other Skills</h3>
@@ -279,8 +287,8 @@
 
   <!-- Experience Section -->
   <section id="experience" class="py-24 px-6 md:px-12 border-y border-border bg-card/10" data-animate>
-    <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-16 space-y-4">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-16 space-y-4">
         <h2 class="text-3xl md:text-5xl font-bold font-display text-white">Professional Experience</h2>
         <p class="text-zinc-400">Milestones of digital brand execution and content leadership.</p>
       </div>
@@ -366,7 +374,7 @@
 
   <!-- Projects Section -->
   <section id="projects" class="py-24 px-6 md:px-12 max-w-7xl mx-auto" data-animate>
-    <div class="text-center mb-16 space-y-4">
+    <div class="mb-16 space-y-4">
       <h2 class="text-3xl md:text-5xl font-bold font-display text-white">Strategic Projects</h2>
       <p class="text-zinc-400">Case studies of engineered chatbot solutions and optimization loops.</p>
     </div>
@@ -376,9 +384,9 @@
       <!-- Project 1 -->
       <div class="vibrant-card rounded-3xl p-8 flex flex-col justify-between">
         <div class="space-y-4">
-          <div class="flex justify-between items-center border-b border-border pb-3">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 border-b border-border pb-3">
             <h3 class="text-xl font-bold font-display text-white">No-Code Chatbot Deployment</h3>
-            <span class="text-xs bg-card text-zinc-300 px-3 py-1 rounded-md border border-cardBorder font-semibold">GenAI for Marketing (2025)</span>
+            <span class="text-xs bg-card text-zinc-300 px-3 py-1 rounded-md border border-cardBorder font-semibold self-start sm:self-auto">GenAI for Marketing (2025)</span>
           </div>
           <p class="text-xs text-zinc-400 leading-relaxed">
             Created a chatbot for an app using WotNot, improving customer interaction experience on Facebook. Familiarity with AI productivity workflows and user-centric design.
@@ -394,9 +402,9 @@
       <!-- Project 2 -->
       <div class="vibrant-card rounded-3xl p-8 flex flex-col justify-between">
         <div class="space-y-4">
-          <div class="flex justify-between items-center border-b border-border pb-3">
-            <h3 class="text-xl font-bold font-display text-white">Digital Campaigns & SEO</h3>
-            <span class="text-xs bg-card text-zinc-300 px-3 py-1 rounded-md border border-cardBorder font-semibold">infin8 Creatives (2024)</span>
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2 border-b border-border pb-3">
+            <h3 class="text-xl font-bold font-display text-white">Digital Campaigns &amp; SEO</h3>
+            <span class="text-xs bg-card text-zinc-300 px-3 py-1 rounded-md border border-cardBorder font-semibold self-start sm:self-auto">infin8 Creatives (2024)</span>
           </div>
           <p class="text-xs text-zinc-400 leading-relaxed">
             Designed SEO and social strategies, ran ad campaigns, and performed technical audits. Demonstrated understanding of digital performance metrics and content marketing workflows.
@@ -414,7 +422,7 @@
 
   <!-- LinkedIn & Carousel Slider Section -->
   <section id="linkedin" class="py-24 px-6 md:px-12 border-y border-border bg-card/10" data-animate>
-    <div class="max-w-5xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         <div class="lg:col-span-4 space-y-4">
@@ -575,7 +583,7 @@
 
   <!-- Portfolios & Channels Link Grid -->
   <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-border" data-animate>
-    <div class="text-center mb-16 space-y-4">
+    <div class="mb-16 space-y-4">
       <h2 class="text-3xl md:text-4xl font-bold font-display text-white">Work Portfolios</h2>
       <p class="text-zinc-400">Direct links to channels, content samples, and job portfolios.</p>
     </div>
@@ -601,21 +609,23 @@
       </a>
 
       <!-- Portfolio Item 3: Notion -->
-      <a href="https://notion.so" target="_blank" class="vibrant-card p-6 rounded-2xl block">
+      <a href="https://oasis-foundation-f36.notion.site/Hello-I-m-Srinath-B-209cc316210e8091bbd1e77619a10ed9?source=copy_link" target="_blank" rel="noopener" class="vibrant-card p-6 rounded-2xl block">
         <div class="flex justify-between items-center mb-3">
           <span class="text-zinc-200"><i class="fa-solid fa-book-open text-xl"></i></span>
           <span class="text-[10px] text-zinc-500 uppercase tracking-wide">Notion Docs</span>
         </div>
         <h4 class="text-sm font-bold text-white font-display">Notion Work Samples</h4>
+        <p class="text-[10px] text-zinc-500 mt-1 truncate">Hello, I'm Srinath B.</p>
       </a>
 
       <!-- Portfolio Item 4: YT Jobs -->
-      <a href="https://ytjobs.co" target="_blank" class="vibrant-card p-6 rounded-2xl block">
+      <a href="https://ytjobs.co/talent/profile/64983?r=434" target="_blank" rel="noopener" class="vibrant-card p-6 rounded-2xl block">
         <div class="flex justify-between items-center mb-3">
-          <span class="text-zinc-400"><i class="fa-solid fa-briefcase text-xl"></i></span>
+          <span class="text-primary"><i class="fa-solid fa-briefcase text-xl"></i></span>
           <span class="text-[10px] text-zinc-500 uppercase tracking-wide">Video Jobs</span>
         </div>
         <h4 class="text-sm font-bold text-white font-display">YT Jobs Portfolio</h4>
+        <p class="text-[10px] text-zinc-500 mt-1">ytjobs.co/talent/profile/64983</p>
       </a>
 
     </div>
@@ -623,83 +633,99 @@
 
   <!-- Contact Section -->
   <section id="contact" class="py-24 px-6 md:px-12 border-t border-border bg-card/10" data-animate>
-    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
       
       <!-- Contact Info -->
-      <div class="lg:col-span-5 space-y-6">
+      <div class="lg:col-span-5 space-y-6 flex flex-col justify-center">
         <div>
           <span class="text-xs font-semibold text-secondary uppercase tracking-widest">Connect</span>
           <h2 class="text-3xl font-bold font-display text-white mt-1">Get in Touch</h2>
           <p class="text-zinc-400 text-xs mt-3 leading-relaxed">
-            Ready to collaborate on camera hosting, video editing, social media copy, or personal branding? Drop a line below.
+            Ready to collaborate on camera hosting, video editing, social media copy, or personal branding? Reach out directly through my active social channels or send an email.
           </p>
         </div>
 
         <div class="space-y-4">
-          <div class="flex items-center gap-4 text-xs">
-            <span class="w-8 h-8 rounded-lg bg-card border border-cardBorder flex items-center justify-center text-primary">
-              <i class="fa-solid fa-envelope"></i>
-            </span>
-            <div>
-              <span class="text-[10px] text-zinc-500 block">Email Address</span>
-              <a href="mailto:bhusrinath@gmail.com" class="text-white hover:text-zinc-350 font-medium">bhusrinath@gmail.com</a>
+          <div class="vibrant-card rounded-2xl p-4 flex items-center justify-between border border-cardBorder bg-card/20 hover:border-primary/40 transition-all duration-300">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="w-9 h-9 rounded-lg bg-card border border-cardBorder flex items-center justify-center text-primary">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+              <div>
+                <span class="text-[9px] text-zinc-500 uppercase tracking-wider block font-semibold">Email Address</span>
+                <a href="mailto:bhusrinath@gmail.com" class="text-white hover:text-zinc-350 font-medium">bhusrinath@gmail.com</a>
+              </div>
             </div>
+            <button id="copy-email-btn" class="w-8 h-8 rounded-lg bg-zinc-800/80 hover:bg-zinc-700 flex items-center justify-center text-zinc-455 hover:text-white transition-colors" title="Copy Email">
+              <i class="fa-regular fa-copy text-xs"></i>
+            </button>
           </div>
-          
-          <div class="flex items-center gap-4 text-xs">
-            <span class="w-8 h-8 rounded-lg bg-card border border-cardBorder flex items-center justify-center text-secondary">
-              <i class="fa-solid fa-phone"></i>
-            </span>
-            <div>
-              <span class="text-[10px] text-zinc-500 block">Phone Number</span>
-              <a href="tel:+918217886267" class="text-white hover:text-zinc-350 font-medium">+91-8217886267</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Social Media Icons -->
-        <div class="flex gap-3 pt-2">
-          <a href="https://linkedin.com/in/srinathbhu" target="_blank" class="w-8 h-8 rounded-lg bg-card border border-cardBorder hover:bg-zinc-800 flex items-center justify-center text-zinc-450 hover:text-white transition-all" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin-in text-sm"></i>
-          </a>
-          <a href="https://instagram.com/srinathbhu" target="_blank" class="w-8 h-8 rounded-lg bg-card border border-cardBorder hover:bg-zinc-800 flex items-center justify-center text-zinc-450 hover:text-white transition-all" aria-label="Instagram">
-            <i class="fa-brands fa-instagram text-sm"></i>
-          </a>
-          <a href="https://youtube.com/@GawdBhu" target="_blank" class="w-8 h-8 rounded-lg bg-card border border-cardBorder hover:bg-zinc-800 flex items-center justify-center text-zinc-450 hover:text-white transition-all" aria-label="YouTube">
-            <i class="fa-brands fa-youtube text-sm"></i>
-          </a>
         </div>
       </div>
 
-      <!-- Contact Form -->
-      <div class="lg:col-span-7">
-        <div class="vibrant-card rounded-3xl p-6 md:p-8">
-          <form id="contact-form" class="space-y-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label for="name" class="text-[10px] text-zinc-450 font-medium block mb-1">Your Name</label>
-                <input type="text" id="name" required class="w-full bg-background border border-cardBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-zinc-700 transition-colors">
-              </div>
-              <div>
-                <label for="email" class="text-[10px] text-zinc-450 font-medium block mb-1">Email Address</label>
-                <input type="email" id="email" required class="w-full bg-background border border-cardBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-zinc-700 transition-colors">
-              </div>
+      <!-- Social Media Links (Replaces Contact Form) -->
+      <div class="lg:col-span-7 space-y-4">
+        
+        <!-- LinkedIn Premium Card -->
+        <a href="https://linkedin.com/in/srinathbhu" target="_blank" rel="noopener" class="vibrant-card rounded-2xl p-5 flex items-center justify-between group hover:border-[#0A66C2]/60 hover:shadow-[0_0_20px_rgba(10,102,194,0.15)] transition-all duration-300">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-[#0A66C2]/10 border border-[#0A66C2]/20 flex items-center justify-center text-[#0A66C2] text-xl group-hover:bg-[#0A66C2]/20 transition-all duration-300">
+              <i class="fa-brands fa-linkedin-in"></i>
             </div>
             <div>
-              <label for="subject" class="text-[10px] text-zinc-450 font-medium block mb-1">Subject</label>
-              <input type="text" id="subject" required class="w-full bg-background border border-cardBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-zinc-700 transition-colors">
+              <div class="flex items-center gap-2">
+                <h4 class="text-sm font-bold text-white font-display">LinkedIn</h4>
+                <span class="text-[9px] bg-[#0A66C2]/20 text-[#0A66C2] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">Professional</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-1">Thought leadership, case studies & brand partnerships.</p>
+              <p class="text-[10px] text-zinc-500 font-mono mt-0.5">linkedin.com/in/srinathbhu</p>
+            </div>
+          </div>
+          <div class="w-8 h-8 rounded-lg bg-zinc-800/80 group-hover:bg-[#0A66C2] flex items-center justify-center text-zinc-400 group-hover:text-white transition-all duration-300">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+          </div>
+        </a>
+
+        <!-- Instagram Premium Card -->
+        <a href="https://instagram.com/srinathbhu" target="_blank" rel="noopener" class="vibrant-card rounded-2xl p-5 flex items-center justify-between group hover:border-[#E1306C]/60 hover:shadow-[0_0_20px_rgba(225,48,108,0.15)] transition-all duration-300">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-[#E1306C]/10 border border-[#E1306C]/20 flex items-center justify-center text-[#E1306C] text-xl group-hover:bg-[#E1306C]/20 transition-all duration-300">
+              <i class="fa-brands fa-instagram"></i>
             </div>
             <div>
-              <label for="message" class="text-[10px] text-zinc-450 font-medium block mb-1">Message</label>
-              <textarea id="message" rows="4" required class="w-full bg-background border border-cardBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-zinc-700 transition-colors resize-none"></textarea>
+              <div class="flex items-center gap-2">
+                <h4 class="text-sm font-bold text-white font-display">Instagram</h4>
+                <span class="text-[9px] bg-[#E1306C]/20 text-[#E1306C] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">Creative</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-1">Reels, digital storytelling & personal branding updates.</p>
+              <p class="text-[10px] text-zinc-500 font-mono mt-0.5">@srinathbhu</p>
             </div>
-            
-            <button type="submit" class="w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-white rounded-lg text-xs font-semibold transition-all">
-              Send Message
-            </button>
-          </form>
-          <div id="form-status" class="hidden"></div>
-        </div>
+          </div>
+          <div class="w-8 h-8 rounded-lg bg-zinc-800/80 group-hover:bg-[#E1306C] flex items-center justify-center text-zinc-450 group-hover:text-white transition-all duration-300">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+          </div>
+        </a>
+
+        <!-- YouTube Premium Card -->
+        <a href="https://youtube.com/@GawdBhu" target="_blank" rel="noopener" class="vibrant-card rounded-2xl p-5 flex items-center justify-between group hover:border-[#FF0000]/60 hover:shadow-[0_0_20px_rgba(255,0,0,0.15)] transition-all duration-300">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-[#FF0000]/10 border border-[#FF0000]/20 flex items-center justify-center text-[#FF0000] text-xl group-hover:bg-[#FF0000]/20 transition-all duration-300">
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h4 class="text-sm font-bold text-white font-display">YouTube</h4>
+                <span class="text-[9px] bg-[#FF0000]/20 text-[#FF0000] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wider">Video Hub</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-1">Pop-culture commentary, comedy skits & creative video shows.</p>
+              <p class="text-[10px] text-zinc-500 font-mono mt-0.5">youtube.com/@GawdBhu</p>
+            </div>
+          </div>
+          <div class="w-8 h-8 rounded-lg bg-zinc-800/80 group-hover:bg-[#FF0000] flex items-center justify-center text-zinc-450 group-hover:text-white transition-all duration-300">
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+          </div>
+        </a>
+
       </div>
 
     </div>
