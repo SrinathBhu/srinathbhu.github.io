@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Srinath Bhuvanapalli</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#0B0D19',
+            foreground: '#F3F4F6',
+            card: '#121426',
+            cardBorder: 'rgba(99, 102, 241, 0.15)',
+            primary: '#6366F1',
+            secondary: '#A855F7',
+            accent: '#EC4899',
+            border: 'rgba(255, 255, 255, 0.08)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        color: #111827 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .print-border {
+        border-color: #e5e7eb !important;
+      }
+      .print-bg-white {
+        background-color: #ffffff !important;
+      }
+      .print-text-dark {
+        color: #111827 !important;
+      }
+      .print-text-gray {
+        color: #4b5563 !important;
+      }
+      @page {
+        margin: 1.2cm;
+      }
+    }
+  </style>
+</head>
+<body class="bg-background text-foreground min-h-screen py-10 px-4 sm:px-6">
+
+  <!-- Print Action Header (Hidden during Print) -->
+  <div class="max-w-4xl mx-auto no-print mb-8 flex justify-between items-center bg-card border border-cardBorder p-4 rounded-xl shadow-xl">
+    <div class="flex items-center gap-3">
+      <a href="/" class="text-xs text-zinc-400 hover:text-white flex items-center gap-1.5 transition-colors">
+        <i class="fa-solid fa-arrow-left"></i> Back to Site
+      </a>
+    </div>
+    <div class="flex gap-3">
+      <button onclick="window.print()" class="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg text-xs font-semibold flex items-center gap-2 transition-all shadow-md">
+        <i class="fa-solid fa-print"></i> Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- Resume Sheet -->
+  <main class="max-w-4xl mx-auto bg-card text-foreground p-8 sm:p-12 rounded-3xl border border-cardBorder shadow-2xl print:bg-white print:text-gray-800 print:border-none print:shadow-none print:p-0">
+    
+    <!-- Top Header -->
+    <div class="border-b border-border pb-6 print:border-gray-300">
+      <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight print:text-black">Srinath Bhuvanapalli</h1>
+          <p class="text-zinc-300 font-medium text-lg mt-1 print:text-zinc-650">Content Strategist | Organic Growth Specialist | Digital Storyteller | Video Producer</p>
+        </div>
+        <div class="space-y-1 text-sm text-zinc-400 print:text-gray-600 sm:text-right">
+          <div><i class="fa-solid fa-envelope w-4 text-primary"></i> bhusrinath@gmail.com</div>
+          <div><i class="fa-solid fa-phone w-4 text-secondary"></i> +91-8217886267</div>
+          <div><i class="fa-brands fa-linkedin w-4 text-accent"></i> linkedin.com/in/srinathbhu</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Career Summary -->
+    <div class="mt-8 space-y-3">
+      <h2 class="text-xs font-semibold tracking-wider uppercase text-secondary print:text-zinc-600">Summary</h2>
+      <p class="text-sm text-zinc-405 print:text-gray-700 leading-relaxed">
+        Expressive, camera-friendly content creator fluent in Hindi and English with 10+ years of experience in digital storytelling, video production, and brand strategy. Adept at scripting, hosting, and producing engaging content across YouTube, Instagram, and emerging platforms. Experienced in tech and animation-adjacent niches with a proven track record in building audiences, enhancing engagement, and adapting storytelling styles to suit platform-specific formats. Looking to bring dynamic on-camera energy and strategic content vision to a forward-thinking, creative brand.
+      </p>
+    </div>
+
+    <!-- Core Skills -->
+    <div class="mt-8 space-y-4 border-t border-border pt-6 print:border-gray-300">
+      <h2 class="text-xs font-semibold tracking-wider uppercase text-secondary print:text-zinc-600">Core Skills</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm">
+        
+        <div class="space-y-1">
+          <h3 class="font-bold text-white print:text-gray-900">On-Camera & Content Creation</h3>
+          <ul class="text-zinc-400 print:text-gray-700 list-disc list-inside space-y-0.5">
+            <li>Bilingual On-Camera Host (Hindi & English)</li>
+            <li>Scriptwriting (Shorts, Reels, Long-form)</li>
+            <li>Storyboarding & Ideation</li>
+            <li>Video Editing (CapCut, Premiere Pro, VN)</li>
+          </ul>
+        </div>
+
+        <div class="space-y-1">
+          <h3 class="font-bold text-white print:text-gray-900">Strategy & Engagement</h3>
+          <ul class="text-zinc-400 print:text-gray-700 list-disc list-inside space-y-0.5">
+            <li>Social Media Content Strategy</li>
+            <li>Audience Growth & Engagement</li>
+            <li>Community Building & Live Interaction</li>
+            <li>YouTube/Instagram Optimization</li>
+          </ul>
+        </div>
+
+        <div class="space-y-1">
+          <h3 class="font-bold text-white print:text-gray-900">Tech Tools & Platforms</h3>
+          <ul class="text-zinc-400 print:text-gray-700 list-disc list-inside space-y-0.5">
+            <li>Adobe Suite (Premiere Pro, Photoshop, After Effects)</li>
+            <li>Canva, Figma Basics</li>
+            <li>Meta Business Suite, YouTube Studio</li>
+            <li>Generative AI for Content (Basic)</li>
+          </ul>
+        </div>
+
+        <div class="space-y-1">
+          <h3 class="font-bold text-white print:text-gray-900">Other Skills</h3>
+          <ul class="text-zinc-400 print:text-gray-700 list-disc list-inside space-y-0.5">
+            <li>Creative Direction & Brand Voice</li>
+            <li>Collaboration with Influencers/Brands</li>
+            <li>Analytics (GA4, Social Performance Metrics)</li>
+            <li>Basic Podcast Setup & Hosting</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Content Expertise -->
+    <div class="mt-8 space-y-3 border-t border-border pt-6 print:border-gray-300">
+      <h2 class="text-xs font-semibold tracking-wider uppercase text-secondary print:text-zinc-600">Content Expertise</h2>
+      <div class="flex flex-wrap gap-2 text-xs">
+        <span class="bg-background print:bg-gray-150 print:text-gray-800 px-2 py-1 rounded border border-cardBorder">Tech & AI Content</span>
+        <span class="bg-background print:bg-gray-150 print:text-gray-800 px-2 py-1 rounded border border-cardBorder">Animation & Pop Culture</span>
+        <span class="bg-background print:bg-gray-150 print:text-gray-800 px-2 py-1 rounded border border-cardBorder">Internet Culture & Trends</span>
+        <span class="bg-background print:bg-gray-150 print:text-gray-800 px-2 py-1 rounded border border-cardBorder">Educational Storytelling</span>
+        <span class="bg-background print:bg-gray-150 print:text-gray-800 px-2 py-1 rounded border border-cardBorder">Commentary & Explainer Videos</span>
+        <span class="bg-background print:bg-gray-150 print:text-gray-800 px-2 py-1 rounded border border-cardBorder">Short-form Video Content</span>
+        <span class="bg-background print:bg-gray-150 print:text-gray-800 px-2 py-1 rounded border border-cardBorder">Creator-led Brand Collaborations</span>
+      </div>
+    </div>
+
+    <!-- Experience Timeline -->
+    <div class="mt-8 space-y-6 border-t border-border pt-6 print:border-gray-300">
+      <h2 class="text-xs font-semibold tracking-wider uppercase text-secondary print:text-zinc-600">Experience</h2>
+      <div class="space-y-6">
+        
+        <!-- Job 1 -->
+        <div class="space-y-1">
+          <div class="flex justify-between items-start text-sm">
+            <div>
+              <strong class="text-white print:text-gray-900">Content Strategist</strong> — <span class="text-zinc-400 print:text-gray-650">Ark Group of Companies</span>
+            </div>
+            <span class="text-xs text-zinc-500 font-semibold uppercase">Aug 2025 – Present</span>
+          </div>
+          <ul class="text-xs text-zinc-400 print:text-gray-700 list-disc list-inside space-y-0.5 mt-1">
+            <li>Managed social media operations and organic content strategy across multiple brand verticals.</li>
+            <li>Led the end-to-end website content revamp, improving messaging, structure, and brand consistency.</li>
+            <li>Developed platform-specific content to enhance audience engagement and brand visibility.</li>
+            <li>Partnered with cross-functional teams across multiple business verticals to deliver cohesive, brand-focused content and optimize content performance.</li>
+          </ul>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="space-y-1">
+          <div class="flex justify-between items-start text-sm">
+            <div>
+              <strong class="text-white print:text-gray-900">Content Strategist</strong> — <span class="text-zinc-400 print:text-gray-650">Professional Creative Services</span>
+            </div>
+            <span class="text-xs text-zinc-500 font-semibold uppercase">Apr 2024 – Jul 2025</span>
+          </div>
+          <ul class="text-xs text-zinc-400 print:text-gray-700 list-disc list-inside space-y-0.5 mt-1">
+            <li>Designed and executed digital content strategies.</li>
+            <li>Created platform-specific storytelling to improve engagement.</li>
+            <li>Analyzed campaign performance data to optimize content distribution.</li>
+            <li>Coordinated with creative teams for brand-focused campaign execution.</li>
+          </ul>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="space-y-1">
+          <div class="flex justify-between items-start text-sm">
+            <div>
+              <strong class="text-white print:text-gray-900">Content Strategist</strong> — <span class="text-zinc-400 print:text-gray-650">CWH Solutions</span>
+            </div>
+            <span class="text-xs text-zinc-500 font-semibold uppercase">Nov 2023 – Feb 2024</span>
+          </div>
+          <ul class="text-xs text-zinc-400 print:text-gray-700 list-disc list-inside space-y-0.5 mt-1">
+            <li>Edited 20+ educational videos; improved viewer retention by 30% and organic reach via SEO-optimized titles.</li>
+            <li>Collaborated on script localization and thumbnail strategy to grow YouTube subscriber base by 500+ monthly.</li>
+          </ul>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="space-y-1">
+          <div class="flex justify-between items-start text-sm">
+            <div>
+              <strong class="text-white print:text-gray-900">Independent Content Creator & Strategist</strong> — <span class="text-zinc-400 print:text-gray-650">GawdBhu</span>
+            </div>
+            <span class="text-xs text-zinc-500 font-semibold uppercase">Dec 2015 – July 2026</span>
+          </div>
+          <ul class="text-xs text-zinc-400 print:text-gray-700 list-disc list-inside space-y-0.5 mt-1">
+            <li>Built and managed a cross-platform brand with 34,000+ organic followers (formerly known for comedy/commentary show <strong>"Bhu'S LoGiCs"</strong>).</li>
+            <li>Produced 200+ camera-facing videos in Hindi and English – scripting, filming, editing, and publishing.</li>
+            <li>Achieved consistent engagement rates of 30–35% with content tailored to trends and storytelling principles.</li>
+            <li>Hosted 10+ collaborative content pieces including interviews, skits, and campaign videos.</li>
+            <li>Created tutorials, satirical shorts, and commentary-style content on tech, culture, and creativity. Manages active Discord community <strong>"Gawd Bhu Geng" (GBG)</strong>.</li>
+          </ul>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="space-y-1">
+          <div class="flex justify-between items-start text-sm">
+            <div>
+              <strong class="text-white print:text-gray-900">Video Editor</strong> — <span class="text-zinc-400 print:text-gray-650">Rachitroo & RachitrooLIVE</span>
+            </div>
+            <span class="text-xs text-zinc-500 font-semibold uppercase">Mar 2023 – Jun 2023</span>
+          </div>
+          <ul class="text-xs text-zinc-400 print:text-gray-700 list-disc list-inside space-y-0.5 mt-1">
+            <li>Produced engaging short-form and long-form video content, leading to a 70% increase in channel views.</li>
+            <li>Enhanced narrative flow and relatability, increasing video shareability and positive viewer feedback.</li>
+          </ul>
+        </div>
+
+        <!-- Job 6 -->
+        <div class="space-y-1">
+          <div class="flex justify-between items-start text-sm">
+            <div>
+              <strong class="text-white print:text-gray-900">Writer & Editor</strong> — <span class="text-zinc-400 print:text-gray-650">Literate Idiots</span>
+            </div>
+            <span class="text-xs text-zinc-500 font-semibold uppercase">2018 – 2019</span>
+          </div>
+          <ul class="text-xs text-zinc-400 print:text-gray-700 list-disc list-inside space-y-0.5 mt-1">
+            <li>Wrote and helped produce 12+ comedic, trend-based scripts; videos averaged 2,000+ views.</li>
+            <li>Worked closely with performers to adapt script tone and pacing for camera and live audiences.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Key Projects -->
+    <div class="mt-8 space-y-4 border-t border-border pt-6 print:border-gray-300">
+      <h2 class="text-xs font-semibold tracking-wider uppercase text-secondary print:text-zinc-600">Key Projects</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 text-xs text-zinc-400 print:text-gray-705">
+        <div class="space-y-1">
+          <strong class="text-white print:text-gray-900 text-sm block">No-Code Chatbot Deployment – GenAI for Marketing (2025)</strong>
+          <p>Created a chatbot for an app using WotNot, improving customer interaction experience on Facebook. Familiarity with AI productivity workflows and user-centric design.</p>
+        </div>
+        <div class="space-y-1">
+          <strong class="text-white print:text-gray-900 text-sm block">Digital Campaigns & SEO for infin8 Creatives (2024)</strong>
+          <p>Designed SEO and social strategies, ran ad campaigns, and performed technical audits. Demonstrated understanding of digital performance metrics and content marketing workflows.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications, Education, Languages & Portfolio -->
+    <div class="mt-8 border-t border-border pt-6 print:border-gray-300 grid grid-cols-1 sm:grid-cols-2 gap-8 text-sm">
+      
+      <!-- Education, Languages & Portfolio Links -->
+      <div class="space-y-6">
+        <div class="space-y-2">
+          <h2 class="text-xs font-semibold tracking-wider uppercase text-secondary print:text-zinc-600">Education</h2>
+          <div>
+            <strong class="text-white print:text-gray-900 block">B.Tech, Chemical Engineering</strong>
+            <span class="text-xs text-zinc-405 print:text-gray-600">Sathyabama University, Chennai (2012–2016) | CGPA: 6.97</span>
+          </div>
+        </div>
+        
+        <div class="space-y-2">
+          <h2 class="text-xs font-semibold tracking-wider uppercase text-secondary print:text-zinc-600">Languages</h2>
+          <div class="text-xs text-zinc-405 print:text-gray-600 space-y-1">
+            <div><span class="text-white print:text-gray-900 font-semibold">Hindi, English:</span> Full Professional Proficiency</div>
+            <div><span class="text-white print:text-gray-900 font-semibold">Telugu, Tamil:</span> Native</div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <h2 class="text-xs font-semibold tracking-wider uppercase text-secondary print:text-zinc-600">Portfolio Links</h2>
+          <div class="text-xs text-zinc-405 print:text-gray-600 space-y-1">
+            <div><span class="font-semibold text-white print:text-gray-900">YouTube:</span> youtube.com/@GawdBhu</div>
+            <div><span class="font-semibold text-white print:text-gray-900">Instagram:</span> instagram.com/srinathbhu</div>
+            <div><span class="font-semibold text-white print:text-gray-900">Notion:</span> Work Samples</div>
+            <div><span class="font-semibold text-white print:text-gray-900">YT Jobs:</span> YT Jobs Portfolio</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div class="space-y-2">
+        <h2 class="text-xs font-semibold tracking-wider uppercase text-secondary print:text-zinc-600">Certifications</h2>
+        <span class="text-xs text-zinc-405 print:text-gray-650 block mb-1">Advanced Certifications in Digital Marketing and Communication:</span>
+        <ul class="text-xs text-zinc-405 print:text-gray-600 list-disc list-inside space-y-1">
+          <li>Basics of Digital Marketing and Communication</li>
+          <li>Social Media & Content Marketing</li>
+          <li>Branding & Communications</li>
+          <li>Marketing Analytics</li>
+          <li>Generative AI</li>
+          <li>Public Relations</li>
+          <li>Marketing Leadership</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="mt-12 text-center text-xs text-zinc-600 no-print">
+    <p>© 2026 Srinath Bhuvanapalli. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

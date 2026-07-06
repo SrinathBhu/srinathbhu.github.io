@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Srinath Bhuvanapalli | Content Strategist & Growth Specialist</title>
+  <meta name="description" content="Digital headquarters of Srinath Bhu, Content Strategist, Organic Growth Specialist, and Digital Storyteller. Fluent in Hindi & English with 10+ years of experience.">
+  
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#0B0D19',
+            foreground: '#F3F4F6',
+            card: '#121426',
+            cardBorder: 'rgba(99, 102, 241, 0.15)',
+            primary: '#6366F1',
+            secondary: '#A855F7',
+            accent: '#EC4899',
+            border: 'rgba(255, 255, 255, 0.08)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-background text-foreground selection:bg-purple-500 selection:text-white antialiased">
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 md:px-12 bg-background/80 backdrop-blur-md border-b border-border">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="/" class="font-display font-bold text-xl tracking-tight text-white flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-primary to-secondary animate-pulse"></span>
+        Srinath Bhu<span class="text-secondary">.</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+        <a href="#summary" class="hover:text-white transition-colors">Summary</a>
+        <a href="#skills" class="hover:text-white transition-colors">Core Skills</a>
+        <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+        <a href="#linkedin" class="hover:text-white transition-colors">LinkedIn</a>
+        <a href="resume" class="bg-gradient-to-r from-primary to-secondary text-white hover:from-indigo-650 hover:to-purple-650 px-4 py-2 rounded-lg text-xs font-semibold tracking-wide transition-all shadow-lg hover:shadow-primary/20">View Resume</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-white focus:outline-none" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed top-[61px] left-0 right-0 bottom-0 bg-background/95 flex-col items-center justify-center gap-8 text-lg font-semibold py-8 px-6 transition-all border-t border-border">
+      <a href="#summary" class="hover:text-white transition-colors">Summary</a>
+      <a href="#skills" class="hover:text-white transition-colors">Core Skills</a>
+      <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+      <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+      <a href="#linkedin" class="hover:text-white transition-colors">LinkedIn</a>
+      <a href="resume" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-3 rounded-lg text-sm font-semibold transition-all">View Resume</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex flex-col justify-center pt-28 pb-16 px-6 md:px-12 max-w-7xl mx-auto relative">
+    <div class="absolute -top-40 right-0 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute -bottom-40 left-0 w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+    <div id="hero-container" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-8 space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-primary/15 to-secondary/15 border border-primary/20 text-indigo-300 text-xs font-semibold tracking-wide uppercase">
+          <i class="fa-solid fa-bolt text-[10px] text-secondary"></i> Digital Headquarters
+        </div>
+        
+        <h1 class="text-4xl sm:text-6xl xl:text-7xl font-bold font-display leading-[1.1] tracking-tight text-white">
+          Srinath Bhuvanapalli
+        </h1>
+        
+        <p class="text-lg md:text-2xl font-light text-zinc-300 max-w-3xl">
+          Content Strategist • Organic Growth Specialist • Digital Storyteller • Video Producer • Creator
+        </p>
+
+        <p class="text-sm font-mono text-zinc-400">
+          <span class="hover:text-white cursor-pointer transition-colors"><i class="fa-solid fa-envelope mr-1 text-primary"></i> bhusrinath@gmail.com</span> • 
+          <span class="hover:text-white cursor-pointer transition-colors ml-2"><i class="fa-solid fa-phone mr-1 text-secondary"></i> +91-8217886267</span> • 
+          <span class="hover:text-white cursor-pointer transition-colors ml-2"><i class="fa-brands fa-linkedin mr-1 text-accent"></i> linkedin.com/in/srinathbhu</span>
+        </p>
+        
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4 pt-4">
+          <a href="#experience" class="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 rounded-lg text-sm font-semibold transition-all flex items-center gap-2 shadow-lg hover:shadow-primary/20">
+            Explore Experience <i class="fa-solid fa-arrow-down text-xs"></i>
+          </a>
+          <a href="resume" class="px-6 py-3 border border-border bg-card/40 hover:bg-card/90 text-white rounded-lg text-sm font-semibold transition-all flex items-center gap-2 hover:border-zinc-700">
+            View Printable Resume <i class="fa-solid fa-file-invoice text-xs text-secondary"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="lg:col-span-4 grid grid-cols-2 gap-4">
+        <div class="vibrant-card rounded-2xl p-6 flex flex-col justify-between min-h-[140px]">
+          <span class="text-zinc-400 text-xs font-semibold tracking-wider uppercase">Organic Followers</span>
+          <span class="stat-count text-3xl font-bold font-display text-white" data-target="34000" data-suffix="+">0</span>
+          <span class="text-[11px] text-zinc-500">GawdBhu Creator Brand</span>
+        </div>
+        <div class="vibrant-card rounded-2xl p-6 flex flex-col justify-between min-h-[140px]">
+          <span class="text-zinc-400 text-xs font-semibold tracking-wider uppercase">Camera Videos</span>
+          <span class="stat-count text-3xl font-bold font-display text-white" data-target="200" data-suffix="+">0</span>
+          <span class="text-[11px] text-zinc-500">Bilingual Production</span>
+        </div>
+        <div class="vibrant-card rounded-2xl p-6 flex flex-col justify-between min-h-[140px]">
+          <span class="text-zinc-400 text-xs font-semibold tracking-wider uppercase">Engagement Rates</span>
+          <span class="stat-count text-3xl font-bold font-display text-white" data-target="35" data-suffix="%">0</span>
+          <span class="text-[11px] text-zinc-500">Trend & Story Principles</span>
+        </div>
+        <div class="vibrant-card rounded-2xl p-6 flex flex-col justify-between min-h-[140px]">
+          <span class="text-zinc-400 text-xs font-semibold tracking-wider uppercase">Industry Experience</span>
+          <span class="stat-count text-3xl font-bold font-display text-white" data-target="10" data-suffix="+ Years">0</span>
+          <span class="text-[11px] text-zinc-500">Bilingual Storytelling</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Summary Section -->
+  <section id="summary" class="py-24 px-6 md:px-12 border-y border-border bg-gradient-to-b from-background to-card/10" data-animate>
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-5">
+        <h2 class="text-3xl md:text-4xl font-bold font-display text-white tracking-tight leading-tight">
+          Executive Summary
+        </h2>
+        <div class="text-xs font-semibold text-secondary uppercase tracking-widest mt-2">"Srinath Bhu is the voice of clarity that cuts through the noise."</div>
+      </div>
+      <div class="lg:col-span-7 space-y-4">
+        <p class="text-zinc-300 leading-relaxed text-base">
+          Expressive, camera-friendly content creator fluent in Hindi and English with 10+ years of experience in digital storytelling, video production, and brand strategy. Adept at scripting, hosting, and producing engaging content across YouTube, Instagram, and emerging platforms.
+        </p>
+        <p class="text-zinc-400 leading-relaxed text-sm">
+          Experienced in tech and animation-adjacent niches with a proven track record in building audiences, enhancing engagement, and adapting storytelling styles to suit platform-specific formats. Restructured channels under comedy sketches, commentary segments, and internet pop-culture commentary formats.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Skills -->
+  <section id="skills" class="py-24 px-6 md:px-12 max-w-7xl mx-auto" data-animate>
+    <div class="space-y-4 mb-16 text-center">
+      <h2 class="text-3xl md:text-5xl font-bold font-display text-white">Core Skills</h2>
+      <p class="text-zinc-400 max-w-xl mx-auto">Categorized capabilities designed to scale audience reach, build community, and manage creative operations.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      <!-- Skills Card 1 -->
+      <div class="vibrant-card rounded-2xl p-6 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-lg">
+            <i class="fa-solid fa-camera"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white">On-Camera & Content Creation</h3>
+          <ul class="text-zinc-400 text-xs space-y-2 list-disc list-inside">
+            <li>Bilingual On-Camera Host (Hindi & English)</li>
+            <li>Scriptwriting (Shorts, Reels, Long-form)</li>
+            <li>Storyboarding & Ideation</li>
+            <li>Video Editing (CapCut, Premiere Pro, VN)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Skills Card 2 -->
+      <div class="vibrant-card rounded-2xl p-6 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-10 h-10 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary text-lg">
+            <i class="fa-solid fa-chart-simple"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white">Strategy & Engagement</h3>
+          <ul class="text-zinc-400 text-xs space-y-2 list-disc list-inside">
+            <li>Social Media Content Strategy</li>
+            <li>Audience Growth & Engagement</li>
+            <li>Community Building & Live Interaction</li>
+            <li>YouTube/Instagram Optimization</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Skills Card 3 -->
+      <div class="vibrant-card rounded-2xl p-6 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-lg">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white">Tech Tools & Platforms</h3>
+          <ul class="text-zinc-400 text-xs space-y-2 list-disc list-inside">
+            <li>Adobe Suite (Premiere, Photoshop, After Effects)</li>
+            <li>Canva, Figma Basics</li>
+            <li>Meta Business Suite, YouTube Studio</li>
+            <li>Generative AI for Content (Basic)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Skills Card 4 -->
+      <div class="vibrant-card rounded-2xl p-6 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-550/20 flex items-center justify-center text-indigo-400 text-lg">
+            <i class="fa-solid fa-folder-open"></i>
+          </div>
+          <h3 class="text-lg font-bold font-display text-white">Other Skills</h3>
+          <ul class="text-zinc-400 text-xs space-y-2 list-disc list-inside">
+            <li>Creative Direction & Brand Voice</li>
+            <li>Collaboration with Influencers/Brands</li>
+            <li>Analytics (GA4, Social Performance Metrics)</li>
+            <li>Basic Podcast Setup & Hosting</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Content Expertise Section -->
+    <div class="mt-16 pt-8 border-t border-border">
+      <h3 class="text-center font-display text-md font-semibold text-zinc-400 mb-6 uppercase tracking-wider">Content Expertise</h3>
+      <div class="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+        <span class="bg-card border border-cardBorder text-zinc-350 text-xs px-3 py-1.5 rounded-md hover:border-secondary transition-colors cursor-default">Tech & AI Content</span>
+        <span class="bg-card border border-cardBorder text-zinc-350 text-xs px-3 py-1.5 rounded-md hover:border-secondary transition-colors cursor-default">Animation & Pop Culture</span>
+        <span class="bg-card border border-cardBorder text-zinc-350 text-xs px-3 py-1.5 rounded-md hover:border-secondary transition-colors cursor-default">Internet Culture & Trends</span>
+        <span class="bg-card border border-cardBorder text-zinc-350 text-xs px-3 py-1.5 rounded-md hover:border-secondary transition-colors cursor-default">Educational Storytelling</span>
+        <span class="bg-card border border-cardBorder text-zinc-350 text-xs px-3 py-1.5 rounded-md hover:border-secondary transition-colors cursor-default">Commentary & Explainer Videos</span>
+        <span class="bg-card border border-cardBorder text-zinc-350 text-xs px-3 py-1.5 rounded-md hover:border-secondary transition-colors cursor-default">Short-form Video Content</span>
+        <span class="bg-card border border-cardBorder text-zinc-350 text-xs px-3 py-1.5 rounded-md hover:border-secondary transition-colors cursor-default">Creator-led Brand Collaborations</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="py-24 px-6 md:px-12 border-y border-border bg-card/10" data-animate>
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16 space-y-4">
+        <h2 class="text-3xl md:text-5xl font-bold font-display text-white">Professional Experience</h2>
+        <p class="text-zinc-400">Milestones of digital brand execution and content leadership.</p>
+      </div>
+
+      <div class="relative border-l border-border pl-6 ml-2 space-y-12">
+        
+        <!-- Experience 1 -->
+        <div class="relative timeline-item">
+          <span class="text-xs font-semibold text-primary bg-card px-2.5 py-1 rounded border border-cardBorder uppercase tracking-wider">Aug 2025 – Present</span>
+          <h3 class="text-xl font-bold font-display text-white mt-2">Content Strategist</h3>
+          <span class="text-sm text-zinc-400">Ark Group of Companies</span>
+          <ul class="mt-3 space-y-2 text-xs text-zinc-400 list-disc list-inside">
+            <li>Managed social media operations and organic content strategy across multiple brand verticals.</li>
+            <li>Led the end-to-end website content revamp, improving messaging, structure, and brand consistency.</li>
+            <li>Developed platform-specific content to enhance audience engagement and brand visibility.</li>
+            <li>Partnered with cross-functional teams across multiple business verticals to deliver cohesive, brand-focused content and optimize content performance.</li>
+          </ul>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="relative timeline-item">
+          <span class="text-xs font-semibold text-secondary bg-card px-2.5 py-1 rounded border border-cardBorder uppercase tracking-wider">Apr 2024 – Jul 2025</span>
+          <h3 class="text-xl font-bold font-display text-white mt-2">Content Strategist</h3>
+          <span class="text-sm text-zinc-400">Professional Creative Services</span>
+          <ul class="mt-3 space-y-2 text-xs text-zinc-400 list-disc list-inside">
+            <li>Designed and executed digital content strategies.</li>
+            <li>Created platform-specific storytelling to improve engagement.</li>
+            <li>Analyzed campaign performance data to optimize content distribution.</li>
+            <li>Coordinated with creative teams for brand-focused campaign execution.</li>
+          </ul>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="relative timeline-item">
+          <span class="text-xs font-semibold text-accent bg-card px-2.5 py-1 rounded border border-cardBorder uppercase tracking-wider">Nov 2023 – Feb 2024</span>
+          <h3 class="text-xl font-bold font-display text-white mt-2">Content Strategist</h3>
+          <span class="text-sm text-zinc-400">CWH Solutions</span>
+          <ul class="mt-3 space-y-2 text-xs text-zinc-400 list-disc list-inside">
+            <li>Edited 20+ educational videos; improved viewer retention by 30% and organic reach via SEO-optimized titles.</li>
+            <li>Collaborated on script localization and thumbnail strategy to grow YouTube subscriber base by 500+ monthly.</li>
+          </ul>
+        </div>
+
+        <!-- Experience 4 -->
+        <div class="relative timeline-item">
+          <span class="text-xs font-semibold text-primary bg-card px-2.5 py-1 rounded border border-cardBorder uppercase tracking-wider">Dec 2015 – July 2026</span>
+          <h3 class="text-xl font-bold font-display text-white mt-2">Independent Content Creator & Strategist</h3>
+          <span class="text-sm text-zinc-400">GawdBhu</span>
+          <ul class="mt-3 space-y-2 text-xs text-zinc-400 list-disc list-inside">
+            <li>Built and managed a cross-platform brand with 34,000+ organic followers (formerly known for comedy/commentary show <strong>"Bhu'S LoGiCs"</strong>).</li>
+            <li>Produced 200+ camera-facing videos in Hindi and English – scripting, filming, editing, and publishing.</li>
+            <li>Achieved consistent engagement rates of 30–35% with content tailored to trends and storytelling principles.</li>
+            <li>Hosted 10+ collaborative content pieces including interviews, skits, and campaign videos.</li>
+            <li>Created tutorials, satirical shorts, and commentary-style content on tech, culture, and creativity. Manages active Discord community <strong>"Gawd Bhu Geng" (GBG)</strong>.</li>
+          </ul>
+        </div>
+
+        <!-- Experience 5 -->
+        <div class="relative timeline-item">
+          <span class="text-xs font-semibold text-secondary bg-card px-2.5 py-1 rounded border border-cardBorder uppercase tracking-wider">Mar 2023 – Jun 2023</span>
+          <h3 class="text-xl font-bold font-display text-white mt-2">Video Editor</h3>
+          <span class="text-sm text-zinc-400">Rachitroo & RachitrooLIVE</span>
+          <ul class="mt-3 space-y-2 text-xs text-zinc-400 list-disc list-inside">
+            <li>Produced engaging short-form and long-form video content, leading to a 70% increase in channel views.</li>
+            <li>Enhanced narrative flow and relatability, increasing video shareability and positive viewer feedback.</li>
+          </ul>
+        </div>
+
+        <!-- Experience 6 -->
+        <div class="relative timeline-item">
+          <span class="text-xs font-semibold text-accent bg-card px-2.5 py-1 rounded border border-cardBorder uppercase tracking-wider">2018 – 2019</span>
+          <h3 class="text-xl font-bold font-display text-white mt-2">Writer & Editor</h3>
+          <span class="text-sm text-zinc-400">Literate Idiots</span>
+          <ul class="mt-3 space-y-2 text-xs text-zinc-400 list-disc list-inside">
+            <li>Wrote and helped produce 12+ comedic, trend-based scripts; videos averaged 2,000+ views.</li>
+            <li>Worked closely with performers to adapt script tone and pacing for camera and live audiences.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-24 px-6 md:px-12 max-w-7xl mx-auto" data-animate>
+    <div class="text-center mb-16 space-y-4">
+      <h2 class="text-3xl md:text-5xl font-bold font-display text-white">Strategic Projects</h2>
+      <p class="text-zinc-400">Case studies of engineered chatbot solutions and optimization loops.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Project 1 -->
+      <div class="vibrant-card rounded-3xl p-8 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center border-b border-border pb-3">
+            <h3 class="text-xl font-bold font-display text-white">No-Code Chatbot Deployment</h3>
+            <span class="text-xs bg-card text-zinc-300 px-3 py-1 rounded-md border border-cardBorder font-semibold">GenAI for Marketing (2025)</span>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Created a chatbot for an app using WotNot, improving customer interaction experience on Facebook. Familiarity with AI productivity workflows and user-centric design.
+          </p>
+        </div>
+        <div class="border-t border-border pt-4 flex gap-2 mt-6">
+          <span class="text-[10px] bg-card px-2.5 py-1 rounded text-zinc-400 font-mono border border-cardBorder">WotNot</span>
+          <span class="text-[10px] bg-card px-2.5 py-1 rounded text-zinc-400 font-mono border border-cardBorder">Facebook Messenger</span>
+          <span class="text-[10px] bg-card px-2.5 py-1 rounded text-zinc-400 font-mono border border-cardBorder">GenAI</span>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="vibrant-card rounded-3xl p-8 flex flex-col justify-between">
+        <div class="space-y-4">
+          <div class="flex justify-between items-center border-b border-border pb-3">
+            <h3 class="text-xl font-bold font-display text-white">Digital Campaigns & SEO</h3>
+            <span class="text-xs bg-card text-zinc-300 px-3 py-1 rounded-md border border-cardBorder font-semibold">infin8 Creatives (2024)</span>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Designed SEO and social strategies, ran ad campaigns, and performed technical audits. Demonstrated understanding of digital performance metrics and content marketing workflows.
+          </p>
+        </div>
+        <div class="border-t border-border pt-4 flex gap-2 mt-6">
+          <span class="text-[10px] bg-card px-2.5 py-1 rounded text-zinc-400 font-mono border border-cardBorder">SEO Audit</span>
+          <span class="text-[10px] bg-card px-2.5 py-1 rounded text-zinc-400 font-mono border border-cardBorder">Ad Campaigns</span>
+          <span class="text-[10px] bg-card px-2.5 py-1 rounded text-zinc-400 font-mono border border-cardBorder">Performance Metrics</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LinkedIn & Carousel Slider Section -->
+  <section id="linkedin" class="py-24 px-6 md:px-12 border-y border-border bg-card/10" data-animate>
+    <div class="max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-4 space-y-4">
+          <span class="text-xs font-semibold text-secondary uppercase tracking-widest">Thought Leadership</span>
+          <h2 class="text-3xl font-bold font-display text-white">LinkedIn Insights</h2>
+          <p class="text-zinc-400 text-xs leading-relaxed">
+            Delivering content guidelines, storytelling techniques, and commentary. Focuses on clarity, education, and myth-busting observations.
+          </p>
+          <div class="pt-4">
+            <a href="https://linkedin.com/in/srinathbhu" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-medium text-xs transition-all shadow-md">
+              <i class="fa-brands fa-linkedin text-sm"></i> Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Slider mockup -->
+        <div class="lg:col-span-8">
+          <div class="vibrant-card rounded-3xl p-6 md:p-8 relative overflow-hidden shadow-xl">
+            <!-- Header Tagline & Brand -->
+            <div class="flex justify-between items-center border-b border-border pb-4 mb-6">
+              <span class="text-xs font-semibold text-zinc-350 flex items-center gap-2">
+                <i class="fa-brands fa-linkedin text-primary text-sm"></i> Srinath Bhu
+              </span>
+              <span class="text-[10px] text-zinc-500 tracking-wider font-semibold uppercase">
+                Rooted in culture, storytelling & perception
+              </span>
+            </div>
+
+            <!-- Carousel track -->
+            <div class="carousel-container relative">
+              <div id="linkedin-carousel-track" class="carousel-track">
+                
+                <!-- Slide 1 -->
+                <div class="carousel-slide space-y-4">
+                  <h4 class="text-base md:text-lg font-bold font-display text-white">Why Organic Growth Isn't About Algorithms</h4>
+                  <p class="text-zinc-400 text-xs leading-relaxed">
+                    "Stop chasing search hacks and focus on audience psychology. Real organic growth occurs when your content becomes an evergreen asset that addresses core reader dilemmas long after posting."
+                  </p>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide space-y-4">
+                  <h4 class="text-base md:text-lg font-bold font-display text-white">The Myth of Perfect Consistency</h4>
+                  <p class="text-zinc-400 text-xs leading-relaxed">
+                    "Quantity without depth is noise. If you're outputting daily posts but saying nothing novel, you're eroding brand authority. Consistency should be measured in insight quality, not frequency."
+                  </p>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide space-y-4">
+                  <h4 class="text-base md:text-lg font-bold font-display text-white">Creator-Led Marketing for SaaS and AI</h4>
+                  <p class="text-zinc-400 text-xs leading-relaxed">
+                    "SaaS brands fail at video because they explain features instead of telling human stories. Relatability and commentary drive conversion, not a list of software capabilities."
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Footer Tagline & Nav -->
+            <div class="flex justify-between items-center border-t border-border pt-4 mt-6">
+              <span class="text-[10px] text-zinc-550 font-semibold uppercase">
+                Srinath Bhu — Content Strategist & Creator
+              </span>
+              <div class="flex items-center gap-2">
+                <button id="carousel-prev" class="w-8 h-8 rounded-md bg-card border border-cardBorder hover:bg-zinc-800 flex items-center justify-center text-white text-xs transition-colors" aria-label="Previous Slide">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button id="carousel-next" class="w-8 h-8 rounded-md bg-card border border-cardBorder hover:bg-zinc-800 flex items-center justify-center text-white text-xs transition-colors" aria-label="Next Slide">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Indicator Dots -->
+            <div id="carousel-indicators" class="flex justify-center gap-2 mt-4"></div>
+            
+            <!-- Bottom CTA Message -->
+            <p class="text-center text-[10px] text-zinc-550 mt-4 italic">
+              Follow for more insights on branding, content & internet culture.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications, Education & Languages Grid -->
+  <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto" data-animate>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      
+      <!-- Certifications -->
+      <div class="space-y-6">
+        <div class="flex items-center gap-3 border-b border-border pb-3">
+          <span class="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary text-sm">
+            <i class="fa-solid fa-award"></i>
+          </span>
+          <h3 class="text-xl font-bold font-display text-white">Certifications</h3>
+        </div>
+        <div class="text-xs text-zinc-400">
+          <span class="text-zinc-300 font-bold block mb-2">Advanced Certifications in Digital Marketing and Communication:</span>
+          <ul class="space-y-2 list-disc list-inside">
+            <li>Basics of Digital Marketing and Communication</li>
+            <li>Social Media & Content Marketing</li>
+            <li>Branding & Communications</li>
+            <li>Marketing Analytics</li>
+            <li>Generative AI</li>
+            <li>Public Relations</li>
+            <li>Marketing Leadership</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="space-y-6">
+        <div class="flex items-center gap-3 border-b border-border pb-3">
+          <span class="w-8 h-8 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary text-sm">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </span>
+          <h3 class="text-xl font-bold font-display text-white">Education</h3>
+        </div>
+        <div class="border border-cardBorder bg-card rounded-2xl p-6 space-y-4 shadow">
+          <div>
+            <span class="text-xs text-secondary font-semibold uppercase tracking-wider">2012–2016</span>
+            <h4 class="text-base font-bold font-display text-white">B.Tech, Chemical Engineering</h4>
+            <p class="text-xs text-zinc-500">Sathyabama University, Chennai</p>
+          </div>
+          <div class="border-t border-border pt-3 flex justify-between items-center text-xs">
+            <span class="text-zinc-500">Academic Score</span>
+            <span class="text-white font-semibold">CGPA: 6.97</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="space-y-6">
+        <div class="flex items-center gap-3 border-b border-border pb-3">
+          <span class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent text-sm">
+            <i class="fa-solid fa-language"></i>
+          </span>
+          <h3 class="text-xl font-bold font-display text-white">Languages</h3>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between items-center border border-cardBorder p-3 rounded-xl text-xs bg-card">
+            <span class="text-white font-medium">Hindi, English</span>
+            <span class="text-[10px] text-zinc-400 font-mono">Full Professional Proficiency</span>
+          </div>
+          <div class="flex justify-between items-center border border-cardBorder p-3 rounded-xl text-xs bg-card">
+            <span class="text-white font-medium">Telugu, Tamil</span>
+            <span class="text-[10px] text-zinc-400 font-mono">Native</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Portfolios & Channels Link Grid -->
+  <section class="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-border" data-animate>
+    <div class="text-center mb-16 space-y-4">
+      <h2 class="text-3xl md:text-4xl font-bold font-display text-white">Work Portfolios</h2>
+      <p class="text-zinc-400">Direct links to channels, content samples, and job portfolios.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      
+      <!-- Portfolio Item 1: YouTube -->
+      <a href="https://youtube.com/@GawdBhu" target="_blank" class="vibrant-card p-6 rounded-2xl block">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-red-500"><i class="fa-brands fa-youtube text-2xl"></i></span>
+          <span class="text-[10px] text-zinc-500 uppercase tracking-wide">YouTube</span>
+        </div>
+        <h4 class="text-sm font-bold text-white font-display">youtube.com/@GawdBhu</h4>
+      </a>
+
+      <!-- Portfolio Item 2: Instagram -->
+      <a href="https://instagram.com/srinathbhu" target="_blank" class="vibrant-card p-6 rounded-2xl block">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-pink-500"><i class="fa-brands fa-instagram text-2xl"></i></span>
+          <span class="text-[10px] text-zinc-500 uppercase tracking-wide">Instagram</span>
+        </div>
+        <h4 class="text-sm font-bold text-white font-display">instagram.com/srinathbhu</h4>
+      </a>
+
+      <!-- Portfolio Item 3: Notion -->
+      <a href="https://notion.so" target="_blank" class="vibrant-card p-6 rounded-2xl block">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-zinc-200"><i class="fa-solid fa-book-open text-xl"></i></span>
+          <span class="text-[10px] text-zinc-500 uppercase tracking-wide">Notion Docs</span>
+        </div>
+        <h4 class="text-sm font-bold text-white font-display">Notion Work Samples</h4>
+      </a>
+
+      <!-- Portfolio Item 4: YT Jobs -->
+      <a href="https://ytjobs.co" target="_blank" class="vibrant-card p-6 rounded-2xl block">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-zinc-400"><i class="fa-solid fa-briefcase text-xl"></i></span>
+          <span class="text-[10px] text-zinc-500 uppercase tracking-wide">Video Jobs</span>
+        </div>
+        <h4 class="text-sm font-bold text-white font-display">YT Jobs Portfolio</h4>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24 px-6 md:px-12 border-t border-border bg-card/10" data-animate>
+    <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+      
+      <!-- Contact Info -->
+      <div class="lg:col-span-5 space-y-6">
+        <div>
+          <span class="text-xs font-semibold text-secondary uppercase tracking-widest">Connect</span>
+          <h2 class="text-3xl font-bold font-display text-white mt-1">Get in Touch</h2>
+          <p class="text-zinc-400 text-xs mt-3 leading-relaxed">
+            Ready to collaborate on camera hosting, video editing, social media copy, or personal branding? Drop a line below.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="flex items-center gap-4 text-xs">
+            <span class="w-8 h-8 rounded-lg bg-card border border-cardBorder flex items-center justify-center text-primary">
+              <i class="fa-solid fa-envelope"></i>
+            </span>
+            <div>
+              <span class="text-[10px] text-zinc-500 block">Email Address</span>
+              <a href="mailto:bhusrinath@gmail.com" class="text-white hover:text-zinc-350 font-medium">bhusrinath@gmail.com</a>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-4 text-xs">
+            <span class="w-8 h-8 rounded-lg bg-card border border-cardBorder flex items-center justify-center text-secondary">
+              <i class="fa-solid fa-phone"></i>
+            </span>
+            <div>
+              <span class="text-[10px] text-zinc-500 block">Phone Number</span>
+              <a href="tel:+918217886267" class="text-white hover:text-zinc-350 font-medium">+91-8217886267</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="flex gap-3 pt-2">
+          <a href="https://linkedin.com/in/srinathbhu" target="_blank" class="w-8 h-8 rounded-lg bg-card border border-cardBorder hover:bg-zinc-800 flex items-center justify-center text-zinc-450 hover:text-white transition-all" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in text-sm"></i>
+          </a>
+          <a href="https://instagram.com/srinathbhu" target="_blank" class="w-8 h-8 rounded-lg bg-card border border-cardBorder hover:bg-zinc-800 flex items-center justify-center text-zinc-450 hover:text-white transition-all" aria-label="Instagram">
+            <i class="fa-brands fa-instagram text-sm"></i>
+          </a>
+          <a href="https://youtube.com/@GawdBhu" target="_blank" class="w-8 h-8 rounded-lg bg-card border border-cardBorder hover:bg-zinc-800 flex items-center justify-center text-zinc-450 hover:text-white transition-all" aria-label="YouTube">
+            <i class="fa-brands fa-youtube text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="lg:col-span-7">
+        <div class="vibrant-card rounded-3xl p-6 md:p-8">
+          <form id="contact-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="text-[10px] text-zinc-450 font-medium block mb-1">Your Name</label>
+                <input type="text" id="name" required class="w-full bg-background border border-cardBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-zinc-700 transition-colors">
+              </div>
+              <div>
+                <label for="email" class="text-[10px] text-zinc-450 font-medium block mb-1">Email Address</label>
+                <input type="email" id="email" required class="w-full bg-background border border-cardBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-zinc-700 transition-colors">
+              </div>
+            </div>
+            <div>
+              <label for="subject" class="text-[10px] text-zinc-450 font-medium block mb-1">Subject</label>
+              <input type="text" id="subject" required class="w-full bg-background border border-cardBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-zinc-700 transition-colors">
+            </div>
+            <div>
+              <label for="message" class="text-[10px] text-zinc-450 font-medium block mb-1">Message</label>
+              <textarea id="message" rows="4" required class="w-full bg-background border border-cardBorder rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-zinc-700 transition-colors resize-none"></textarea>
+            </div>
+            
+            <button type="submit" class="w-full py-2.5 bg-gradient-to-r from-primary to-secondary text-white rounded-lg text-xs font-semibold transition-all">
+              Send Message
+            </button>
+          </form>
+          <div id="form-status" class="hidden"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 px-6 md:px-12 text-center text-xs text-zinc-500 border-t border-border">
+    <p>© 2026 Srinath Bhuvanapalli. All rights reserved.</p>
+    <p class="mt-1 font-mono">Rooted in clarity, storytelling & organic growth.</p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 w-9 h-9 rounded-lg bg-card border border-cardBorder text-white flex items-center justify-center shadow-lg transition-all opacity-0 pointer-events-none hover:bg-zinc-800 z-50 animate-float" aria-label="Back to Top">
+    <i class="fa-solid fa-arrow-up text-xs"></i>
+  </button>
+
+  <!-- Motion.dev Animation CDN (Rebranded Framer Motion for Vanilla JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
