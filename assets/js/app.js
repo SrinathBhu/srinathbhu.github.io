@@ -26,16 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const openMenu = () => {
     menuOpen = true;
-    mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-    mobileMenu.style.opacity  = '1';
+    mobileMenu.classList.remove('mobile-menu-closed');
+    mobileMenu.classList.add('mobile-menu-open');
     menuIcon.classList.replace('fa-bars', 'fa-xmark');
     menuBtn.setAttribute('aria-expanded', 'true');
   };
 
   const closeMenu = () => {
     menuOpen = false;
-    mobileMenu.style.maxHeight = '0';
-    mobileMenu.style.opacity   = '0';
+    mobileMenu.classList.remove('mobile-menu-open');
+    mobileMenu.classList.add('mobile-menu-closed');
     menuIcon.classList.replace('fa-xmark', 'fa-bars');
     menuBtn.setAttribute('aria-expanded', 'false');
   };
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Close on outside click
   document.addEventListener('click', (e) => {
-    if (menuOpen && !mobileMenu.contains(e.target) && e.target !== menuBtn) {
+    if (menuOpen && !mobileMenu.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) {
       closeMenu();
     }
   });

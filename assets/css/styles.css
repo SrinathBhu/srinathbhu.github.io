@@ -120,3 +120,21 @@ h1, h2, h3, h4, h5, h6 {
 .animate-float {
   animation: float 5s ease-in-out infinite;
 }
+
+/* Mobile Menu Drawer */
+#mobile-menu {
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+#mobile-menu.mobile-menu-closed {
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#mobile-menu.mobile-menu-open {
+  max-height: 500px;
+  opacity: 1;
+  pointer-events: auto;
+}
